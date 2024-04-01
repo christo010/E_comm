@@ -1,0 +1,30 @@
+{% extends "store/base2.html" %}
+{% load static %}
+{% block title %}
+Ecommerce|Product Detail
+{% endblock title %}
+{% block content %}
+
+
+<div class="mt-5 bg-secondary text-light">
+{%for i in p_data%}
+<img src="{{ i.product_image.url }}" alt="">
+<h2><u>Brand Name:{{i.name}}</u></h2><br>
+Category :{{i.category}}<br>
+price :<s>{{i.original_price}}</s><br>
+Offer Price :{{i.selling_price}}<br>
+Desc :{{i.description}}<br>
+<a class="btn btn-dark" href="{% url "cart" i.id %}" role="button">Add to cart</a>
+<button type="button" class="bg-outline-dark ">-</button>
+<input type="number">
+<button type="button">+</button>
+
+<div class="input-group" style="width:150px">
+    <button class="input-group-text bg-success text-light" name="" id=""><i class="fa-solid fa-plus"></i></button>
+    <input type="text" name="" id="" value="" class="form-select text-danger">
+    <button class="input-group-text bg-success text-light" name="" id=""><i class="fa-solid fa-minus"></i></button>
+</div>
+
+
+{%endfor%}
+{%endblock%}

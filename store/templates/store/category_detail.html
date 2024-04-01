@@ -1,0 +1,42 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block title %}
+ECOM|Products 
+{% endblock title%} 
+
+
+
+{% block content %}
+<div class="container">
+  <div class="card text-center">
+    <div class="card-header bg-dark ">
+
+<div class="h4 pb-2 mb-4 text-light text-center border-bottom border-light my-3">{{ name.name }}</div>
+   
+<div class="row bg-secondary">
+    
+    {% for product in data %}
+      
+      <div class="col-md-4">  
+        <a href="{% url "p_det" product.id %}">
+          <div class="card mb-4 mt-3">
+            <img src="{{ product.product_image.url }}" class="card-img-top" alt="..." height="200px" width="400px">
+            <div class="card-body text-center">
+              <p class="card-title">{{ product.name }}</p>
+              <p class="card-text"><s>{{ product.original_price }}</s></p>
+              <p class="card-text">{{ product.selling_price }}</p>
+            </a>
+            </div>
+          </div>
+        
+      </div>
+    {% endfor %}
+  </div>
+</div>
+</div>
+</div>
+  
+{% endblock %}
+
+
+

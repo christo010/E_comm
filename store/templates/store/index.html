@@ -1,0 +1,31 @@
+{% extends "store/base.html" %}
+{% block content %}
+
+<div class="container mt-4">
+  <div class="card text-center">
+    <div class="card-header bg-dark ">
+      
+  
+  <div class="h4 pb-2 mb-4 text-light text-center  my-3">CATEGORIES</div>
+    
+
+  <div class="row bg-secondary">
+  {% for i in categories %}
+    <div class="col-md-4"> 
+       <a href="{% url 'pr' i.id%}">
+        <div class="card mb-4 mt-3">
+          <img src="{{ i.image.url }}" class="card-img-top" alt="..." height="300px" width="400px">
+          <div class="card-body">
+            <p class="card-text"><center><h5>{{ i.name }}</h5></center></p>
+          </a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+</div>
+</div>
+</div>
+
+
+{%endblock%}

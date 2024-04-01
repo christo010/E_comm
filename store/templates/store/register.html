@@ -1,0 +1,69 @@
+ {% extends 'store/base2.html' %}
+{% load static %}
+{% block title %}
+Ecommerce|Register
+{% endblock title %}
+{% block content %}
+
+
+
+
+<div class="p-5">
+    <div class="card-header bg-dark ">
+      
+  
+        <div class="h4 pb-2 mb-2 text-light text-center  my-3">REGISTER</div>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+<div class="row">
+    <div class="pt-2">
+    <form action="" method="post">
+        {%csrf_token%}
+        <div class="form-floating mb-4 w-100">
+            {{form.username}}
+            {% if form.errors.username %}
+            {%endif%}
+            <label for="floatingInput">Username:</label>
+             
+        </div>
+        <div class="form-floating mb-4">
+
+      {{form.password1}}
+      {% if form.errors.password1 %}
+      {%endif%}
+     <label for="passwordInput">password:</label>
+    </div>
+    <div class="form-floating mb-4">
+ {{form.password1}}
+ {% if form.errors.password2 %}
+ {%endif%}
+<label for="passwordInput">Confirm password:</label>
+</div>
+<div class="form-floating mb-4">
+    {{form.first_name}}
+    {% if form.errors.first_name %}
+    {%endif%}
+    <label for="floatingInput">First Name:</label>
+</div>
+<div class="form-floating mb-4">
+     {{form.last_name}}
+     {% if form.errors.last_name %}
+     {%endif%}
+    <label for="floatingInput">Last Name:</label>
+    </div>
+    <div class="form-floating mb-4">
+        {{form.email}}
+        {% if form.errors.email %}
+        {%endif%}
+        <label for="floatingInput">email:</label>
+        </div>
+
+
+        <center><button type="submit" class="btn btn-dark">register</button></center>
+    </form>
+</div>
+</div>
+</div>
+</div>
+    {% endblock content %}
+
